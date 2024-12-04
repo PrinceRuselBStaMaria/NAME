@@ -245,7 +245,7 @@ $cancelledQuery = "SELECT COUNT(*) as cancelled_count FROM appointments WHERE st
                                             <td><?php echo date('h:i A', strtotime($row['appointment_time'])); ?></td>
                                             <td><span class="badge <?php echo $badgeClass; ?>"><?php echo $status; ?></span></td>
                                             <td>
-                                                <button class="btn btn-sm btn-primary" onclick="window.location.href='../reched.php?id=<?php echo $row['id']; ?>'">Edit</button>
+                                                <button class="btn btn-sm btn-primary" onclick="window.location.href='reched.php?id=<?php echo $row['id']; ?>'">Edit</button>
                                                 <button class="btn btn-sm btn-danger" onclick="cancelAppointment(<?php echo $row['id']; ?>)">Cancel</button>
                                             </td>
                                         </tr>
