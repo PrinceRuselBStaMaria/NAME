@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <!-- Updated FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .action-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .action-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .service-card, .service-card-cancel {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover, .service-card-cancel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="step active" id="step1">
+        <h2>Select a Service</h2>
+        <div class="container">
+            <div class="service-card" onclick="selectService('Dental Checkup')">
+                <h3>Dental Checkup</h3>
+                <p>Regular dental examination and cleaning</p>
+            </div>
+            <div class="service-card" onclick="selectService('Root Canal')">
+                <h3>Root Canal</h3>
+                <p>Root canal treatment and therapy</p>
+            </div>
+            <div class="service-card" onclick="selectService('Dental Implant')">
+                <h3>Dental Implant</h3>
+                <p>Tooth implants for the gaps of your smile</p>
+            </div>
+            <div class="service-card" onclick="selectService('Aesthetic and Cosmetic')">
+                <h3>Aesthetic and Cosmetic</h3>
+                <p>Let's add more shine to your smile</p>
+            </div>
+            <div class="service-card" onclick="selectService('Orthodontic Treatment')">
+                <h3>Orthodontic Treatment</h3>
+                <p>Braces, Aligners, and Retainers to straighten teeth</p>
+            </div>
+            <div class="service-card" onclick="selectService('Wisdom Tooth Removal')">
+                <h3>Wisdom Tooth Removal</h3>
+                <p>Let's remove your painful tooth</p>
+            </div>
+            <div class="service-card" onclick="window.location.href='reched.php'">
+                <h3>Reschedule Appointment</h3>
+                <p>Reschedule your appointment</p>
+            </div>
+            <div class="service-card-cancel" onclick="selectService('Cancellation')">
+                <h3>Cancel Appointment</h3>
+                <p>Cancel your appointment</p>
+            </div>
+            <div class="service-card" onclick="window.location.href='editUser.php'">
+                <h3>Edit Account</h3>
+                <p>Edit acc Info</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="action-button" onclick="window.location.href = 'login.html'">Logout</button>
+            <button class="action-button" onclick="nextStep(1)">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Doctor Selection -->
+    <div class="step" id="step2">
+        <h2>Select a Doctor</h2>
+        <div class="doctor-card" onclick="selectDoctor('Dr.Jhon batongbakal')">
+            <h3>Dr.Jhon batongbakal</h3>
+            <p>Implant Surgeon</p>
+        </div>
+        <div class="doctor-card" onclick="selectDoctor('Dr. Johnson')">
+            <h3>Dr.Shaira Mendoza</h3>
+            <p>Implant Surgeon</p>
+        </div>
+        <div class="doctor-card" onclick="selectDoctor('Dr. Johnson')">
+            <h3>Dr. Russell Santos</h3>
+            <p>Implant Surgeon</p>
+        </div>
+        <div class="doctor-card" onclick="selectDoctor('Dr. Johnson')">
+            <h3>Dr. Gian Umali</h3>
+            <p>Implant Surgeon</p>
+        </div>
+        <div class="doctor-card" onclick="selectDoctor('Dr. Johnson')">
+            <h3>Dr.Daniel Bautista</h3>
+            <p>Implant Surgeon</p>
+        </div>
+        <div class="step2-buttons">
+            <button id="doc-prev-btn" onclick="prevStep(2)">Previous</button>
+            <button onclick="window.location.href='calendar.html'">Next</button>
+        </div>
+    </div>
+
+    <!-- Updated FullCalendar JS -->
+    <script src="magic.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+*
+{   
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary: #06A3DA;
+    --secondary:#22177A;
+    --light: #EEF9FF;
+    --dark: #091E3E;
+}
+
+
+.body
+{
+    font-family:'Inter',sans-serif;
+    font-weight: 800;
+    transition: .5s;
+}
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+.text-primary{
+    color: #06A3DA !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+.top-shape::before {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 100%;
+    top: 0;
+    left: -17px;
+    background: var(--primary);
+    transform: skew(40deg);
+}
+.btn-primary,
+.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+.textdark{
+    color: #091E3E;
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Jost', sans-serif;
+    padding: 35px 15px;
+    font-size: 15px;
+    color: var(--dark);
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 20px 15px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link,
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+.hero-header {
+    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9, 30, 62, .7);
+    z-index: 1;
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 14px;
+        font-weight: 500 !important;
+    }
+
+    .carousel-caption h1 {
+        font-size: 30px;
+        font-weight: 600 !important;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+@media (min-width: 991.98px) {
+    .facts {
+        position: relative;
+        margin-top: -75px;
+        z-index: 1;
+    }
+}
+
+.vertical-carousel .owl-stage {
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-carousel .owl-item {
+    width: 100%;
+}
+
+.item {
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes customFadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes customFadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.owl-item {
+    animation-duration: 1s; 
+}
+
+.fadeOutUp {
+    animation-name: customFadeOutUp;
+}
+
+.fadeInDown {
+    animation-name: customFadeInDown;
+}
+
+
+.bg-testimonial {
+    background: url(img/carousel-2.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.testimonial-carousel {
+    background: rgba(6, 163, 218, .85);
+}
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: calc(100% + 46px);
+    height: 46px;
+    top: calc(50% - 23px);
+    left: -23px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 2px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.drop:hover{
+    background-color: #00AAFF;
+
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--secondary);
+}
+
+.testimonial-carousel .owl-item img {
+    width: 120px;
+    height: 120px;
+}
+
+.sectiontitle{
+    position: relative;
+}
+
+.sectiontitle::before{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:150px;
+    height:5px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+.sectiontitle::after{   
+    position:absolute;
+    content:"";
+    bottom:0px;
+    height:5px;
+    width:6px;
+    background-color: #EEF9FF;
+    animation: section-title-run 5s infinite linear;
+}
+
+@keyframes section-title-run
+{
+    0% {left: 0; } 
+    50% { left : 145px; } 
+    100% { left: 0; }
+}
+
+.bg-appointment
+{
+    background: linear-gradient(rgba(9, 30, 62, .85), rgba(9, 30, 62, .85)), url(img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.appointment-form {
+    background: rgba(6, 163, 218, .7);
+}
+.bg-offer {
+    background:url(img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+.offer-text {
+    background: rgba(6, 163, 218, .85);
+}
+.price-carousel .owl-nav {
+    position: absolute;
+    width: calc(100% + 45px);
+    height: 45px;
+    top: calc(50% - 22.5px);
+    left: -22.5px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+}
+
+.price-carousel:hover .owl-nav {
+    opacity: 1;
+}
+
+.price-carousel .owl-nav .owl-prev,
+.price-carousel .owl-nav .owl-next {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 2px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.price-carousel .owl-nav .owl-prev:hover,
+.price-carousel .owl-nav .owl-next:hover {
+    background: var(--secondary);
+}
+.img-fluid{
+    transition:1s;
+}
+.img-fluid:hover{
+
+    transform: scale(1.2);
+}
+.footer-links  a
+{
+    text-decoration:none;
+}
+.icon{
+    color:#EEF9FF;
+    background-color:#06A3DA;
+}
+.icon:hover{
+    background-color: #22177A;
+    color:#EEF9FF;
+}
+.icon-1{
+    background-color: #22177A;
+    color: #EEF9FF;
+}
+.icon-1:hover{
+    background-color: #06A3DA;
+    color: #EEF9FF;
+}
+.twentytwenty-wrapper {
+    height: 100%;
+}
+.bg-light{
+    background-color: #EEF9FF;
+}
+.border-bottom{
+    border-bottom:1px solid #06A3DA !important;
+}
+.logo {
+    height: 50px; /* Adjust height to match navbar height */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align with text */
+    margin-right: 10px; /* Add some spacing between logo and text */
+    margin-top: -5px;
+}
+.dentalName {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #06A3DA;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+.navnamelogo {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+
+.carouselTestimony {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    gap: 10px;
+  
+    > div {
+      flex: 0 0 120px;
+      border-radius: 0.5rem;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      box-shadow: 1px 5px 15px #091E3E;
+      position: relative;
+      overflow: hidden;
+  
+      &:nth-of-type(1) {
+        background: url("img/testi1.jpg")
+          no-repeat 50% / cover;
+      }
+      &:nth-of-type(2) {
+        background: url("img/testi2.jpg")
+          no-repeat 50% / cover;
+      }
+      &:nth-of-type(3) {
+        background: url("img/testi3.jpg")
+          no-repeat 50% / cover;
+      }
+      &:nth-of-type(4) {
+        background: url("img/testi4.1.jpg")
+          no-repeat 50% / cover;
+      }
+  
+      .contentCara {
+        font-size: 1.5rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        opacity: 0;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-end;
+        background: rgb(2, 2, 46);
+        background: linear-gradient(
+          0deg,
+          rgba(2, 2, 46, 0.6755077030812324) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: translatey(100%);
+        transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+        visibility: hidden;
+  
+        span {
+          display: block;
+          margin-top: 5px;
+          font-size: 1.2rem;
+        }
+      }
+  
+      &:hover {
+        flex: 0 0 250px;
+        box-shadow: 1px 3px 15px #27B0E1;
+        transform: translatey(-30px);
+      }
+  
+      &:hover .contentCara {
+        opacity: 1;
+        transform: translatey(0%);
+        visibility: visible;
+      }
+    }
+  }
+  
+.textte{
+    text-align: center;
+    padding: 10px;
+}
+/* Reset carousel container */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Clear any background from wrap */
+.carousel--wrap {
+    display: inline-flex;
+    transition: transform 0.3s ease-out;
+    background: none;
+}
+
+/* Clean up item styling */
+.carousel--item {
+    flex: 0 0 300px;
+    padding: 15px;
+    user-select: none;
+    background: transparent;
+    transition: transform 0.3s ease-out;
+}
+
+/* Ensure figure doesn't add overlay */
+.carousel--item figure {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0;
+    background: none;
+}
+
+/* Clean image rendering */
+.carousel--item figure img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+    z-index: 1;
+    filter: none; /* Remove any filters */
+}
+
+/* Minimal progress bar */
+.carousel--progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: none;
+    z-index: 2;
+}
+
+.carousel--progress-bar {
+    width: 0;
+    height: 100%;
+    background: #ffffff;
+    transition: width 0.3s ease-in-out, transform 0.3s ease-out;
+}
+
+.abouttext{
+    font-size: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right: 45px;
+    padding-bottom: 25px;
+}

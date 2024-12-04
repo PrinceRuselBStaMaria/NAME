@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+
+* {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00AAFF;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: #222222;
+}
+
+.service-card p, .service-card-cancel p, .doctor-card p {
+    font-size: 1rem;
+    color: #222222;
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.step {
+    display: none;
+    background-color: #F5F5F4;
+    backdrop-filter: blur(20px);
+    padding: 2rem 8rem;
+    height: 100vh;
+    max-height: 100vh;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+}
+.step.active {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+    max-height: 80%;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+#step1 button {
+    margin-left: auto;
+}
+
+#step1 button, #step2 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #00AAFF;
+    font-size: 1rem;
+    transition: 200ms ease;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+#step1 button:hover, #step2 button:hover {
+    background-color: hsl(200, 100%, 60%);
+}
+#step1 button:active, #step2 button:active {
+    background-color: hsl(200, 100%, 45%);
+}
+
+.step2-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.prev-next-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.service-card, .service-card-cancel, .doctor-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 100ms ease;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 4rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.doctor-card {
+    margin: 1rem 0rem;
+}
+
+.service-card:hover, .doctor-card:hover {
+    background-color: #00AAFF;
+}
+.service-card-cancel:hover {
+    background-color: #da3a3a;
+}
+
+.time-slots {
+    display: none;
+}
+.time-slots.show {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.time-slot {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+.fc {
+    width: 100%;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.fc .fc-highlight {
+    background: #e9ecef;
+}
+.selected-date {
+    background: #007bff !important;
+    color: white !important;
+}
+
+.calendarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+
+.instructions {
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #444444;
+}
+
+.calendarbtn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #00AAFF;
+    font-size: 1rem;
+    transition: 200ms ease;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+.calendarbtn button:hover {
+    background-color: hsl(200, 100%, 60%);
+}
+.calendarbtn button:active {
+    background-color: hsl(200, 100%, 45%);
+}
+.calendarbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calendarbtn div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+}
+.backbutton {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.backbutton:hover {
+    background-color: #c82333;
+}
+
+.nextbutton {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.nextbutton:hover {
+    background-color: #218838;
+}

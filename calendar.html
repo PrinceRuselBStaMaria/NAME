@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Appointment Booking</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+</head>
+<body>
+    <div class="booking-container">
+        <h2>Book Your Dental Appointment</h2>
+        
+        <!-- Service Selection -->
+        <div class="form-group">
+            <label for="serviceSelect">Select Service:</label>
+            <select id="serviceSelect" required>
+                <option value="">Select Service</option>
+                <option value="cleaning">Dental Cleaning</option>
+                <option value="checkup">Regular Checkup</option>
+                <option value="filling">Dental Filling</option>
+                <option value="extraction">Tooth Extraction</option>
+            </select>
+        </div>
+
+        <!-- Doctor Selection -->
+        <div class="form-group">
+            <label for="doctorSelect">Select Doctor:</label>
+            <select id="doctorSelect" required>
+                <option value="">Select Doctor</option>
+                <option value="dr1">Dr. Smith</option>
+                <option value="dr2">Dr. Johnson</option>
+                <option value="dr3">Dr. Williams</option>
+            </select>
+        </div>
+        <!-- Doctor Event Listener Script -->
+        <script>
+            document.getElementById('doctorSelect').addEventListener('change', function(e) {
+                const selectedDoctor = e.target.value;
+                if (selectedDoctor) {
+                    updateCalendar(selectedDoctor);
+                }
+            });
+
+            function updateCalendar(doctorId) {
+                // Calendar update logic will be handled in appointment.js
+                if (window.appointmentSystem) {
+                    window.appointmentSystem.selectedDoctor = doctorId;
+                    window.appointmentSystem.renderCalendar();
+                }
+            }
+        </script>
+        <!-- Calendar View -->
+        <div id="calendar">Please select a date and time for your appointment</div>
+
+        <!-- Time Slots -->
+        <div id="timeSlots" class="time-slots">
+            <h3>Available Time Slots</h3>
+            <div class="slots-container"></div>
+        </div>
+
+        <!-- Booking Form -->
+        <div id="bookingForm" class="booking-form">
+            <h3>Patient Information</h3>
+            <form id="appointmentForm">
+                <input type="text" id="patientName" placeholder="Full Name" required>
+                <input type="email" id="patientEmail" placeholder="Email" required>
+                <input type="tel" id="patientPhone" placeholder="Phone Number" required>
+                <textarea id="patientNotes" placeholder="Additional Notes"></textarea>
+                <button type="submit" id="bookAppointment">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add your custom CSS and JavaScript files here -->
+    <script src="js/appointment.js"></script>
+</body>
+</html></form>

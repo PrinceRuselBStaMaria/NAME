@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&display=swap" rel="stylesheet">
+
+    <!-- bootstrap-5 links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>Dental Haven</title>
+    <!-- Addtional -->
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary m-1" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark m-1" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary m-1" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid  ps-5 pe-0 d-none d-lg-block" style="background-color: #EEF9FF;" id="home">
+        <div class="row gx-0">
+            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <small class="py-2"><i class="far fa-clock  me-2" style="color: #06A3DA;"></i>
+                        Opening Hours: Monday - Friday : 7:00 am - 5:00 pm</small>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-lg-end">
+                <div class="position-relative d-inline-flex align-items-center  text-white top-shape px-5"
+                    style="background-color: #06A3DA;">
+                    <div class="me-3 pe-3 border-end py-2">
+                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>DentalHaven@gmail.com</p>
+                    </div>
+                    <div class="py-2">
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+64 966 176362</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg icon  rounded back-to-top"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent p-3" placeholder="Type search keyword"
+                            style="border:2px solid #06A3DA;">
+                        <button class="btn  px-4" style="background-color: #06A3DA;"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+            <h1 class="m-0" style="color: #1b1b1b; font-weight: 700 !important;"><img class="logo" src="img/1logog1.png" alt="img"></img>
+             </i>Dental Haven Malolos</h1>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#services" class="nav-item nav-link">Service</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="#pricing" class="dropdown-item drop">Pricing Plan</a>
+                        <a href="#ourDentist" class="dropdown-item  drop">Our Dentist</a>
+                        <a href="#testimonial" class="dropdown-item  drop">Testimonial</a>
+                    </div>
+                </div>
+                <a href="#footer-div" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="lab3/login.html" class="btn icon py-2 px-4 ms-3">Appointment</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+
+    <!-- CAROUSEL STARTS -->
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-3">KEEP YOUR TEETH HEALTHY</h5>
+                        <h1 class="display-1 text-white mb-md-4  body">Happiest your Teeth will ever be  </h1>
+                        <a href="lab3/login.html" class="btn icon py-md-3 px-md-5 me-3"
+                            style="font-weight: 700 !important;">Appointment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-3">KEEP YOUR TEETH HEALTHY</h5>
+                        <h1 class="display-1 text-white mb-md-4 body">Take The Best Quality Dental
+                            Treatment</h1>
+                            <a href="lab3/login.html" class="btn icon py-md-3 px-md-5 me-3"
+                            style="font-weight: 700 !important;">Appointment</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <!-- CAROUSEL ENDS -->
+
+    <!-- Facts Starts -->
+
+
+    <!-- Facts Ends -->
+
+    <!-- About starts -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="sectiontitle pb-3 mb-5">
+                        <h5 style="color: #06A3DA;font-weight: 700;">ABOUT US</h5>
+                        <h1 class="display-5 mb-0" style="color: #091E3E; font-weight: 400;">The World's Best Dental
+                            Clinic That You Can Trust</h1>
+                    </div>
+                    <p class="abouttext">
+                        At Dental Haven, we specialize in TMJ treatment, Implant Dentistry, Aesthetic and Cosmetic Dentistry, Oral Surgery, and Orthodontics. With our in-house Panoramic and Cephalometric X-ray, we offer precise diagnostics and advanced care. Trust us to help you achieve a healthier, more confident smile with personalized and expert care.
+
+                    </p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6 wow" data-wow-delay="0.2s">
+                            <h5 class="mb-3"><i class="fa fa-check me-3" style="color: #06A3DA;"></i>Professional Staff
+                            </h5>
+                        </div>
+                        <div class="col-sm-6 wow " data-wow-delay="0.4s">
+                            <h5 class="mb-3"><i class="fa fa-check me-3" style="color: #06A3DA;"></i>Fair Prices</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 wow" data-wow-delay="0.6s">
+                        
+                        <div class="ps-4">
+                            <h5 class="mb-2"></h5>
+                            <h4 class="mb-0" style="color: #06A3DA;"></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="position-relative h-100"><img src="img/about.jpg" class="w-100 h-100" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About ends-->
+    <!-- Appointment Start -->
+    <!-- <div class="container-fluid  bg-appointment my-5 wow fadeInUp" data-wow-delay="0.1s"
+        style="background-color: #06A3DA;">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6 py-5">
+                    <div class="py-5">
+                        <h1 class="display-5 text-white mb-4" style="font-weight: 700 !important;">We Are A Certified
+                            and Award Winning Dental Clinic You Can
+                            Trust</h1>
+                        <p class="text-white mb-0">At Dental Haven Clinic, we take pride in our status as a certified
+                            and award-winning provider of exceptional dental care, recognized for our commitment to
+                            excellence and patient's satisfaction.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow"
+                        data-wow-delay="0.6s">
+                        <h1 class="text-white mb-4" style="font-weight: 700 !important;">Make Appointment</h1>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                        <option selected>Select A Service</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 2</option>
+                                        <option value="3">Service 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                        <option selected>Select Doctor</option>
+                                        <option value="1">Doctor 1</option>
+                                        <option value="2">Doctor 2</option>
+                                        <option value="3">Doctor 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email"
+                                        style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Appointment Date" data-target="#date1"
+                                            data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="time" id="time1" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Appointment Time" data-target="#time1"
+                                            data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn text-white w-100 py-3" type="submit"
+                                        style="background-color: #091E3E;">Make Appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Appointment End -->
+    <!-- Service  backup   <div class="container-fluid py-5 wow" id="services" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-5 wow" data-wow-delay="0.3s" style="min-height: 400px;">
+                    <div class="twentytwenty-container position-relative h-100 rounded overflow-hidden">
+                        <img class="position-absolute w-100 h-100" src="img/before.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/after.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sectiontitle pb-3 mb-5">
+                        <h5 class="position-relative d-inline-block  text-uppercase"
+                            style="color: #06A3DA; font-weight: 700;">Our
+                            Services</h5>
+                        <h1 class="display-5 mb-0" style="color: #091E3E; font-weight: 400;">We Offer The Best Quality
+                            Dental Services</h1>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-md-6 service-item wow" data-wow-delay="0.6s">
+                            <div class="rounded-top overflow-hidden">
+                                <img class="img-fluid" src="img/service-1.jpg" alt="">
+                            </div>
+                            <div class="position-relative bg-light rounded-bottom text-center p-4">
+                                <h5 class="m-0" style="color: #091E3E;">Cosmetic Dentistry</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 service-item wow" data-wow-delay="0.9s">
+                            <div class="rounded-top overflow-hidden">
+                                <img class="img-fluid" src="img/service-2.jpg" alt="">
+                            </div>
+                            <div class="position-relative bg-light rounded-bottom text-center p-4">
+                                <h5 class="m-0" style="color: #091E3E;">Dental Implants</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5 wow" data-wow-delay="0.1s">
+                <div class="col-lg-7">
+                    <div class="row g-5">
+                        <div class="col-md-6 service-item wow" data-wow-delay="0.3s">
+                            <div class="rounded-top overflow-hidden">
+                                <img class="img-fluid" src="img/service-3.jpg" alt="">
+                            </div>
+                            <div class="position-relative bg-light rounded-bottom text-center p-4">
+                                <h5 class="m-0" style="color: #091E3E;">Dental Bridges</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 service-item wow" data-wow-delay="0.6s">
+                            <div class="rounded-top overflow-hidden">
+                                <img class="img-fluid" src="img/service-4.jpg" alt="">
+                            </div>
+                            <div class="position-relative bg-light rounded-bottom text-center p-4">
+                                <h5 class="m-0" style="color: #091E3E;">Teeth Whitening</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 service-item wow" data-wow-delay="0.9s">
+                    <div class="position-relative  rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-4"
+                        style="background-color: #06A3DA;">
+                        <h3 class="text-white mb-3">Make Appointment</h3>
+                        <p class="text-white mb-3">Ready to schedule your next dental appointment? Booking with
+                            DentalHaven Clinic is easy!</p>
+                        <h2 class="text-white mb-0">+059 274 8963</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+  
+    <!--experiment-->
+    <div class="container-fluid py-5 wow" id="services" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-5 wow" data-wow-delay="0.3s" style="min-height: 400px;">
+                    <div class="twentytwenty-container position-relative h-100 rounded overflow-hidden">
+                        <img class="position-absolute w-100 h-100" src="img/before.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="img/after.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sectiontitle pb-3 mb-5">
+                        <h5 class="position-relative d-inline-block  text-uppercase"
+                            style="color: #06A3DA; font-weight: 700;">Our
+                            Services</h5>
+                        <h1 class="display-5 mb-0" style="color: #091E3E; font-weight: 400;">We Offer The Best Quality
+                            Dental Services</h1>
+                    </div>
+            <!-- Add carousel below
+            <div class="carousel">
+                <div class="carousel--wrap">
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1595265677860-9a3168007dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>South</h2>
+                  </div>
+              
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1594786118579-95ba90c801ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>Troker</h2>
+                  </div>
+              
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1509339022327-1e1e25360a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>Slant</h2>
+                  </div>
+              
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1525417071002-5ee4e6bb44f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>Gravy</h2>
+                  </div>
+              
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1594072702031-f0e2a602dd2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>Amuse</h2>
+                  </div>
+              
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1592989819277-a3aafa40c66a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>Truffle</h2>
+                  </div>
+                  
+                  <div class="carousel--item">
+                    <figure><img src="https://images.unsplash.com/photo-1548374797-d13fd5d2b2a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" /></figure>
+                    <h2>Locker</h2>
+                  </div>
+              
+                </div>
+                <div class="carousel--progress">
+                  <div class="carousel--progress-bar"></div>
+                </div>
+              </div> -->
+              <!-- Add carousel below -->
+             <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+                <!-- Carousel indicators -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"></button>
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="3"></button>
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="4"></button>
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="5"></button>
+                  <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="6"></button>
+                </div>
+              
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <figure><img src="img/bsservice7.jpg" class="d-block w-100" alt="South"></figure>
+                    <div class="carousel-caption">
+                        <h2>Dental Check up</h2>
+                    </div>
+                  </div>
+                  
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <figure><img src="img/bsservice2.jpg" class="d-block w-100" alt="Troker"></figure>
+                    <div class="carousel-caption">
+                        <h2>Root Canal Therapy</h2>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <figure><img src="img/bsservice1.jpg" class="d-block w-100" alt="Troker"></figure>
+                    <div class="carousel-caption">
+                        <h2>Dental Implant</h2>
+                    </div>
+                  </div>
+                   
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <figure><img src="img/bsservice2.jpg" class="d-block w-100" alt="Troker"></figure>
+                    <div class="carousel-caption">
+                        <h2>Aesthetic and Cosmetic</h2>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <figure><img src="img/bsservice3.jpg" class="d-block w-100" alt="Troker"></figure>
+                    <div class="carousel-caption">
+                        <h2>Orthodontic Treatment</h2>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <figure><img src="img/bsservice4.jpg" class="d-block w-100" alt="Troker"></figure>
+                    <div class="carousel-caption">
+                        <h2>Wisdom Tooth Removal</h2>
+                    </div>
+                  </div>
+
+                  <!-- Add remaining items similarly -->
+                </div>
+              
+                <!-- Navigation controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              
+                <!-- Progress bar -->
+                <div class="carousel--progress">
+                  <div class="carousel--progress-bar"></div>
+                </div>
+              </div>
+              
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    
+
+    <!-- Service End -->
+    <!-- Offer Part 
+    <div class="container-fluid bg-offer my-5 py-5 wow" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 wow" data-wow-delay="0.6s">
+                    <div class="offer-text text-center rounded p-5">
+                        <h1 class="display-5 text-white" style="font-weight: 700 !important;">Save 30% On Your First
+                            Dental Checkup</h1>
+                        <p class="text-white mb-4">Take advantage of our special offer and save 30% on your next dental
+                            check-up at Dentcare Dental Clinic! Keeping up with your oral health has never been more
+                            affordable. Schedule your appointment today and let our experienced team ensure your smile
+                            stays bright and healthy. Don't miss out on this limited-time discount-book now!</p>
+                        <a href="lab3/login.html" class="btn py-3 px-5 me-3 text-white"
+                            style="background-color: #091E3E;  font-weight:700 !important">Appointment</a>
+                        <a href="" class="btn btn-light py-3 px-5"
+                            style="color: #091E3E; font-weight:700 !important">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     -->
+    
+    <!-- Pricing Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="pricing">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="section-title mb-4">
+                    <h5 class="position-relative d-inline-block text-primary text-uppercase">Pricing Plan</h5>
+                    <h1 class="display-5 mb-0"style="color:#091E3E; font-weight: 400;">Affordable Quality Dental Care</h1>
+                </div>
+                <p class="abouttext">At Dental Haven Malolos, we make your dental visit comfortable and stress-free. Our expert team provides comprehensive care - from routine checkups to cosmetic procedures. We focus on personalized treatment and patient education to help you achieve optimal oral health.</p>
+            </div>
+            <div class="col-lg-7">
+                <div class="owl-carousel price-carousel wow zoomIn" data-wow-delay="0.9s">
+                    <div class="price-item pb-4">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-top" src="img/price-1.jpg" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
+                                style="z-index: 2;">
+                                <h2 class="text-primary m-0">Php.1,000</h2>
+                            </div>
+                        </div>
+                        <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                            <h4>Teeth Whitening</h4>
+                            <hr class="text-primary w-50 mx-auto mt-0">
+                            <div class="d-flex justify-content-between mb-3"><span>Modern Equipment</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Professional Dentist</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Available for appointments</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <a href="lab3/login.html"
+                                class="btn icon  py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a>
+                        </div>
+                    </div>
+                    <div class="price-item pb-4">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-top" src="img/price-2.jpg" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
+                                style="z-index: 2;">
+                                <h2 class="text-primary m-0">Php.60,000</h2>
+                            </div>
+                        </div>
+                        <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                            <h4>Dental Implant</h4>
+                            <hr class="text-primary w-50 mx-auto mt-0">
+                            <div class="d-flex justify-content-between mb-3"><span>Modern Equipment</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Professional Dentist</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Available for appointments</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <a href="lab3/login.html"
+                                class="btn  icon  py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a>
+                        </div>
+                    </div>
+                    <div class="price-item pb-4">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-top" src="img/price-3.jpg" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-light rounded pt-2 px-3 position-absolute top-100 start-50 translate-middle"
+                                style="z-index: 2;">
+                                <h2 class="text-primary m-0">Php.6,913</h2>
+                            </div>
+                        </div>
+                        <div class="position-relative text-center bg-light border-bottom border-primary py-5 p-4">
+                            <h4>Root Canal</h4>
+                            <hr class="text-primary w-50 mx-auto mt-0">
+                            <div class="d-flex justify-content-between mb-3"><span>Modern Equipment</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-3"><span>Professional Dentist</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <div class="d-flex justify-content-between mb-2"><span>Available for appointments</span><i
+                                    class="fa fa-check text-primary pt-1"></i></div>
+                            <a href="lab3/login.html"
+                                class="btn  icon py-2 px-4 position-absolute top-100 start-50 translate-middle">Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Pricing End -->
+
+    <!-- Testimonial tewst
+    <div class="container-fluid bg-primary bg-testimonial py-5 my-5 wow" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="owl-carousel testimonial-carousel rounded p-5 wow" data-wow-delay="0.6s">
+                        <div class="testimonial-item text-center text-white">
+                            <img class="img-fluid mx-auto rounded mb-4" src="img/testimonial-1.jpg" alt="">
+                            <p class="fs-5">
+
+
+                                "I recently visited Dental Haven Malolos for a routine check-up, and I couldn't be
+                                more impressed with the level of care I received. The staff was incredibly welcoming and
+                                attentive, making me feel comfortable throughout the entire appointment.I highly
+                                recommend them to anyone in search of top-notch dental care!"
+                            </p>
+                            <hr class="mx-auto w-25">
+                            <h4 class="text-white mb-0">Shane Ramos</h4>
+                        </div>
+                        <div class="testimonial-item text-center text-white">
+                            <img class="img-fluid mx-auto rounded mb-4" src="img/testimonial-2.jpg" alt="">
+                            <p class="fs-5">"Choosing Dental Haven Malolos was one of the best decisions I've made for
+                                my dental health. From the moment I walked in, I was greeted by a friendly and
+                                professional team who made me feel at ease. The dentist took the time to listen to my
+                                concerns and provided clear explanations about my treatment options. I'm
+                                grateful to Dental Haven Clinic for their exceptional service and would highly
+                                recommend them to anyone looking for a reliable and caring dental provider."</p>
+                            <hr class="mx-auto w-25">
+                            <h4 class="text-white mb-0">Ashley Mendoza</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     -->
+    <!-- Testimonial Test -->
+    <h1 id="testimonial" class="textte">Testimonial</h1>
+    <div class="carouselTestimony">
+        
+        <div>
+          <div class="contentCara">
+            <h2>Quick Service</h2>
+            <span>I was impressed by how fast and efficient the service was at Dental Haven Malolos! Despite the quick turnaround, the care and attention to detail were exceptional. Highly recommended for anyone seeking top-notch dental care without the long wait!</span>
+          </div>
+        </div>
+        <div>
+          <div class="contentCara">
+            <h2>Friendly Staff</h2>
+            <span>The team at Dental Haven Malolos is incredibly warm and accommodating. They made me feel welcome and at ease throughout my visit. Their kindness and professionalism set them apart!</span>
+          </div>
+        </div>
+        <div>
+          <div class="contentCara">
+            <h2>Exceptional Care</h2>
+            <span>The attention and care I received at Dental Haven Malolos were outstanding. They made sure every step of the process was smooth and tailored to my needs. Truly a standout experience!</span>
+          </div>
+        </div>
+        <div>
+          <div class="contentCara">
+            <h2>Affordable Quality</h2>
+            <span>I was thrilled to find such high-quality dental care at reasonable prices. Dental Haven Malolos delivers exceptional results without breaking the bank!</span>
+          </div>
+        </div>
+      </div>
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5" id="ourDentist">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 wow" data-wow-delay="0.1s">
+                    <div class="section-title bg-light rounded h-100 p-5">
+                        <h5 class="position-relative d-inline-block  text-uppercase" style="color: #06A3DA;">Our Dentist
+                        </h5>
+                        <h1 class="display-6 mb-4" style="color: #091E3E; font-weight: 400;">Meet Our Certified &
+                            Experienced Dentist</h1>
+                        <a href="lab3/login.html" class="btn  icon py-3 px-5 ">Appointment</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow" data-wow-delay="0.3s">
+                    <div class="team-item img-fluid">
+                        <div class="position-relative rounded-top" style="z-index: 1;">
+                            <img class="rounded-top w-100" src="img/team-1.jpg" alt="">
+                            <div
+                                class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
+                                <a class="btn icon btn-square m-1" href="https://www.facebook.com/dentalhavenmalolos"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
+                            <h4 class="mb-2" style="color: #091E3E;">Dr.Jhon batongbakal</h4>
+                            <p class=" mb-0" style="color: #06A3DA;">Implant Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow" data-wow-delay="0.6s">
+                    <div class="team-item img-fluid">
+                        <div class="position-relative rounded-top" style="z-index: 1;">
+                            <img class=" rounded-top w-100" src="img/team-2.jpg" alt="">
+                            <div
+                                class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
+                                <a class="btn icon btn-square m-1" href="https://www.facebook.com/dentalhavenmalolos"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
+                            <h4 class="mb-2" style="color: #091E3E;">Dr.Shaira Mendoza.</h4>
+                            <p class=" mb-0" style="color: #06A3DA;">Implant Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow" data-wow-delay="0.1s">
+                    <div class="team-item img-fluid">
+                        <div class="position-relative rounded-top" style="z-index: 1;">
+                            <img class=" rounded-top w-100" src="img/team-3.jpg" alt="">
+                            <div
+                                class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
+                                <a class="btn icon btn-square m-1" href="https://www.facebook.com/dentalhavenmalolos"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
+                            <h4 class="mb-2" style="color: #091E3E;">Dr. Russell Santos</h4>
+                            <p class=" mb-0" style="color: #06A3DA;">Implant Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow" data-wow-delay="0.3s">
+                    <div class="team-item img-fluid">
+                        <div class="position-relative rounded-top" style="z-index: 1;">
+                            <img class=" rounded-top w-100" src="img/team-4.jpg" alt="">
+                            <div
+                                class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
+                                <a class="btn icon btn-square m-1" href="https://www.facebook.com/dentalhavenmalolos"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
+                            <h4 class="mb-2" style="color: #091E3E;">Dr. Gian Umali </h4>
+                            <p class=" mb-0" style="color: #06A3DA;">Implant Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow" data-wow-delay="0.6s">
+                    <div class="team-item img-fluid">
+                        <div class="position-relative rounded-top" style="z-index: 1;">
+                            <img class=" rounded-top w-100" src="img/team-5.jpg" alt="">
+                            <div
+                                class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
+                                <a class="btn icon btn-square m-1" href="https://www.facebook.com/dentalhavenmalolos"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
+                            <h4 class="mb-2" style="color: #091E3E;">Dr.Daniel Bautista</h4>
+                            <p class="mb-0" style="color:#06A3DA;">Implant Surgeon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid position-relative pt-5 wow" data-wow-delay="0.1s" style="z-index: 1;">
+`
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div id="footer-div" class="container-fluid  text-light py-5 wow" data-wow-delay="0.3s"
+        style="margin-top: -75px; background-color: #091E3E;">
+        <div class="container pt-5">
+            <div class="row g-5 pt-4">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column justify-content-start footer-links">
+                        <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right  me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="#about"><i class="bi bi-arrow-right me-2"></i>About
+                            Us</a>
+                        <a class="text-light mb-2" href="#services"><i class="bi bi-arrow-right  me-2"></i>Our
+                            Services</a>
+                        <a class="text-light" href="https://www.facebook.com/dentalhavenmalolos"><i class="bi bi-arrow-right me-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Popular Links</h3>
+                    <div class="d-flex flex-column  footer-links justify-content-start">
+                        <a class="text-light mb-2 " href="#"><i class="bi bi-arrow-right me-2"></i>Home</a>
+                        <a class="text-light mb-2" href="#about"><i class="bi bi-arrow-right  me-2"></i>About
+                            Us</a>
+                        <a class="text-light mb-2" href="#services"><i class="bi bi-arrow-right  me-2"></i>Our
+                            Services</a>
+                        <a class="text-light" href="https://www.facebook.com/dentalhavenmalolos"><i class="bi bi-arrow-right me-2"></i>Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Get In Touch</h3>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primar me-2"></i>76, Paseo del Congreso Liang, Malolos City Bulacan beside BPI Paseo branch, former Matt Baloons, In front of Ramada Construction Supplies 3000 Malolos, Philippines</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primar me-2"></i>dentalhavenmalolos@gmail.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primar me-2"></i>+64 966 1763626</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Follow Us</h3>
+                    <div class="d-flex">
+                        <a class="btn btn-lg  btn-lg-square rounded me-2 icon" href="https://www.facebook.com/dentalhavenmalolos"><i
+                                class="fab fa-facebook-f fw-normal"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-light py-4" style="background: #051225;">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-white " href="#">DentalHaven</a>. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/caraforser/carasouel.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/twentytwenty/jquery.event.move.js"></script>
+    <script src="lib/twentytwenty/jquery.twentytwenty.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

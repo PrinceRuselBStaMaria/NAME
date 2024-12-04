@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.css' rel='stylesheet' />
+    <title>Appointment Page</title>
+</head>
+<body>
+    <div class="calendarContainer">
+        <p class="instructions">Please select a time and date for your appointment</p>
+        <div id='calendar'></div>
+            <div class="calendarbtn">
+                <div>
+                    <button id="calendar-prev-btn" onclick="goBack()">Previous Page</button>
+                    <button id="calendar-back-btn" onclick="calendarBack()">Back to Month View</button>
+                </div>
+                <button id="calendar-next-btn" onclick="window.location.href='user.html'">Next</button>
+            </div>
+    </div>  
+
+    <!-- Updated FullCalendar JS -->
+    <script src="magic.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.js'></script>
+</body>
+</html>

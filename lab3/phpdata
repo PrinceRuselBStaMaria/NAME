@@ -1,0 +1,110 @@
+MOve The files to the htdocs
+Open phpMyAdmin:
+Go to http://localhost/phpmyadmin
+Create database:
+Click "New" in left sidebar
+Enter "Dental" as database name
+Select:
+Collation: utf8mb4_unicode_ci
+Character set: utf8mb4
+Click "Create"
+This setting (utf8mb4_unicode_ci) is the best choice because:
+Supports all Unicode characters including emojis
+Case-insensitive collation
+Good for multilingual content
+Standard choice for modern MySQL databases
+Click "Create"
+Create table:
+Select "Dental" database
+Click "SQL" tab at the top
+Paste this SQL:
+CREATE TABLE appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_name VARCHAR(100),
+    email VARCHAR(100),
+    service VARCHAR(100),
+    doctor VARCHAR(100),
+    appointment_date DATE,
+    appointment_time TIME,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- Add status column using ENUM type
+ALTER TABLE appointments
+ADD COLUMN status ENUM('Confirmed', 'Completed', 'Cancelled') 
+DEFAULT 'Confirmed';
+
+-- Update any existing records to Confirmed status
+UPDATE appointments 
+SET status = 'Confirmed' 
+WHERE status IS NULL;
+----------------------------------------------------------
+CREATE TABLE appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_name VARCHAR(100),
+    email VARCHAR(100),
+    service VARCHAR(100),
+    doctor VARCHAR(100),
+    appointment_date DATE,
+    appointment_time TIME,
+    notes TEXT,
+    status ENUM('Confirmed', 'Completed', 'Cancelled') DEFAULT 'Confirmed',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+-- admin 
+CREATE TABLE admin_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+INSERT INTO admin_users (username, password) 
+VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');  -- password is 'password'
+-----------------------------------------------------------
+run the seed file to have the appointments
+
+<?php
+// get_blocked_times.php
+<?php
+header('Content-Type: application/json');
+require_once '../connection.php';
+
+$sql = "SELECT * FROM blocked_times";
+$result = $conn->query($sql);
+$events = array();
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $events[] = array(
+            'id' => $row['id'],
+            'title' => 'BLOCKED',
+            'start' => $row['start_date'] . 'T' . $row['start_time'],
+            'end' => $row['end_date'] . 'T' . $row['end_time'],
+            'color' => '#FF0000',
+            'display' => 'background'
+        );
+    }
+}
+echo json_encode($events);
+?>
+
+-- Create blocked_times table
+CREATE TABLE blocked_times (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    start_date DATE NOT NULL,
+    start_time TIME NOT NULL,
+    end_date DATE NOT NULL,
+    end_time TIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- create_users_table.sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    privacy_consent BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

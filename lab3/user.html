@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dental Appointment Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+<div class="form">
+    <h1>Dental Appointment Record</h1>
+    <form id="appointmentForm">
+        <div>
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName" placeholder="Input Name" required>
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Input Email"  required>
+        </div>
+        <div>
+            <label for="notes">Additional Notes or Service to Add:</label>
+            <textarea id="notes" placeholder="Input Note" name="notes" rows="4"></textarea>
+        </div>
+        <button type="submit">Submit Appointment</button>
+    </form>
+</div>
+
+<script>
+function handleFormSubmission(event) {
+    event.preventDefault();
+    
+    // Changed appointmentData to formData in sessionStorage
+    const formData = {
+        patientName: document.getElementById('patientName').value,
+        email: document.getElementById('email').value,
+        notes: document.getElementById('notes').value,
+        service: sessionStorage.getItem('selectedService'),
+        doctor: sessionStorage.getItem('selectedDoctor'),
+        date: sessionStorage.getItem('selectedDate'),
+        time: sessionStorage.getItem('selectedTime')
+    };
+
+    try {
+        // Use formData instead of appointmentData
+        sessionStorage.setItem('appointmentData', JSON.stringify(formData));
+        window.location.href = 'confirmation.php';
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error processing appointment');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('appointmentForm');
+    if (form) {
+        form.addEventListener('submit', handleFormSubmission);
+    }
+});
+</script>
+</body>
+</html>

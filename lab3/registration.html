@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dental Appointment Registration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* h1 {
+        para ma push
+      } */
+
+      h2 {
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-container {
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 10px 10px 5px lightblue;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .name-container {
+        display: flex;
+        gap: 15px;
+      }
+      .name-container .form-group {
+        flex: 1;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input:hover {
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        border: 2px solid #6a6a6a;
+      }
+
+      button {
+        background-color: rgb(6, 163, 218);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .privacy-notice {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .checkbox-container input[type="checkbox"] {
+        width: auto;
+        margin-top: 4px;
+      }
+      .checkbox-container label {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Dental Appointment Registration</h2>
+      <form action="register.php" method="POST">
+        <div class="name-container">
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Contact Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[0-9]{11}"
+            title="Please enter exactly 11 digits"
+            required
+            maxlength="11"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          />
+          <span id="phoneError" style="color: red; font-size: 12px"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+        </div>
+
+        <div class="privacy-notice">
+          <h4>Data Privacy Notice</h4>
+          <p>
+            In accordance with Republic Act No. 10173, also known as the Data
+            Privacy Act of 2012, we would like to inform you that:
+          </p>
+          <ul>
+            <li>
+              Your personal information will be collected and processed for
+              appointment booking purposes
+            </li>
+            <li>
+              Your data will be stored securely and protected against
+              unauthorized access
+            </li>
+            <li>
+              Your information will only be used for dental service-related
+              communications
+            </li>
+            <li>
+              You have the right to access, correct, and request deletion of
+              your personal data
+            </li>
+          </ul>
+        </div>
+
+        <div class="checkbox-container">
+          <input
+            type="checkbox"
+            id="privacyConsent"
+            name="privacyConsent"
+            required
+          />
+          <label for="privacyConsent">
+            I have read and agree to the Data Privacy Notice. I consent to the
+            collection, storage, and processing of my personal information as
+            described above.
+          </label>
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <script>
+      document.querySelector("form").addEventListener("submit", function (e) {
+        if (!document.getElementById("privacyConsent").checked) {
+          e.preventDefault();
+          alert("Please agree to the Data Privacy Notice to proceed");
+        }
+      });
+
+      document.getElementById("phone").addEventListener("input", function (e) {
+        const phone = e.target.value;
+        const phoneError = document.getElementById("phoneError");
+
+        if (phone.length > 0 && !/^[0-9]+$/.test(phone)) {
+          phoneError.textContent = "Please enter numbers only";
+        } else if (phone.length !== 11 && phone.length > 0) {
+          phoneError.textContent = "Phone number must be 11 digits";
+        } else {
+          phoneError.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>
